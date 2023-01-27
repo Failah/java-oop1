@@ -36,4 +36,16 @@ public class Prodotto {
 		Random r = new Random();
 		this.code = String.format("%08d", r.nextInt(9998) + 1);
 	}
+
+	double getPrice() {
+		return this.price;
+	}
+
+	double getPriceIVA() {
+		return (price + (price * 22) / 100);
+	}
+
+	String getExtendedName() {
+		return this.code + this.name;
+	}
 }
