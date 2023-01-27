@@ -23,5 +23,27 @@ Il menu continua ad apparire fino a che l’utente sceglie di uscire.
 package org.lessons.java.bank;
 
 public class Conto {
+	int accountNumber;
+	String holderName;
+	double balance;
+
+	public Conto(String holderName, int accountNumber) {
+		// TODO Auto-generated constructor stub
+		this.balance = 0;
+		this.holderName = holderName;
+	}
+
+	void addCash(double money) {
+		this.balance += money;
+	}
+
+	boolean takeCash(double money) {
+		if (money > this.balance) {
+			return false;
+		} else {
+			this.balance -= money;
+			return true;
+		}
+	}
 
 }
