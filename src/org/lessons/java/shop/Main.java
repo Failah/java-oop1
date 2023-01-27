@@ -40,11 +40,11 @@ public class Main {
 
 		Prodotto p = new Prodotto(name, price);
 
-		p.showInfos();
-		p.showExtendedName();
-		p.showPrice();
-		p.showPriceIVA();
-
+		System.out.println("Product name: " + name);
+		System.out.println("Product code: " + p.code);
+		System.out.println("Product base price is: " + price);
+		System.out.println("Product price with IVA is: " + (price + (price * 22) / 100));
+		System.out.println("Extended name is: " + p.code + name.trim());
 	}
 
 }

@@ -26,7 +26,6 @@ public class Prodotto {
 	String name;
 	String description;
 	double price;
-	double priceIVA;
 	double IVA = 22;
 
 	public Prodotto(String name, Double price) {
@@ -34,27 +33,7 @@ public class Prodotto {
 		this.name = name;
 		this.price = price;
 
-		this.priceIVA = this.price + (this.price * 22) / 100;
-
 		Random r = new Random();
 		this.code = String.format("%08d", r.nextInt(9998) + 1);
-		// this.code = r.nextInt(99999998) + 1;
-	}
-
-	void showInfos() {
-		System.out.println("Product name: " + this.name);
-		System.out.println("Product code: " + this.code);
-	}
-
-	void showPrice() {
-		System.out.println("Product base price is: " + this.price);
-	}
-
-	void showPriceIVA() {
-		System.out.println("Product price with IVA is: " + priceIVA);
-	}
-
-	void showExtendedName() {
-		System.out.println("Extended name is: " + this.code + this.name.trim());
 	}
 }
