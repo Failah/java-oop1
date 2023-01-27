@@ -28,7 +28,6 @@ public class Main {
 
 		String name = null;
 		double price;
-		double priceIVA;
 
 		Scanner s = new Scanner(System.in);
 		System.out.println("Insert product name:");
@@ -41,13 +40,11 @@ public class Main {
 
 		Prodotto p = new Prodotto(name, price);
 
-		priceIVA = p.getPriceIVA();
-
 		System.out.println("Product name: " + name);
 		System.out.println("Product code: " + p.code);
 		System.out.println("Product base price is: " + price);
-		System.out.println("Product price with IVA is: " + priceIVA);
-		System.out.println("Extended name is: " + p.code + name.trim());
+		System.out.println("Product price with IVA is: " + p.getPriceIVA());
+		System.out.println("Extended name is: " + p.getExtendedName());
 	}
 
 }
